@@ -20,21 +20,21 @@ function AllCategories() {
     fetchCategories();
   }, []);  
 
-  useEffect(() => {
-    const delayRender = setTimeout(() => {
-      if (categories !== 0) {
-        setIsLoading(false);
-      } 
-      else {
-        getCategories(setCategories); 
-      }
-    }, 3000); 
+  // useEffect(() => {
+  //   const delayRender = setTimeout(() => {
+  //     if (categories !== 0) {
+  //       setIsLoading(false);
+  //     } 
+  //     else {
+  //       getCategories(setCategories); 
+  //     }
+  //   }, 3000); 
 
-    return () => clearTimeout(delayRender);
-  }, [isLoading]);
-  if (isLoading) {
-    return <p>Loading...</p>;  
-  }
+  //   return () => clearTimeout(delayRender);
+  // }, [isLoading]);
+  // if (isLoading) {
+  //   return <p>Loading...</p>;  
+  // }
 
   if (error) {
     return <p>{error}</p>; 
